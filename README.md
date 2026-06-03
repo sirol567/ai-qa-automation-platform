@@ -48,7 +48,7 @@ Pass/fail results surfaced immediately after each pipeline run.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Category | Tools |
 |----------|-------|
@@ -60,23 +60,23 @@ Pass/fail results surfaced immediately after each pipeline run.
 
 ---
 
-## 🔄 Workflow
+##  Workflow
 Requirements
-↓
+ → 
 AI Test Case Generation
-↓
+ → 
 Google Sheets (Storage)
-↓
+ → 
 Playwright Selector Extraction
-↓
+ → 
 AI Script Generation
-↓
+ → 
 Locator Merging
-↓
+ → 
 GitHub Auto-Commit
-↓
+ → 
 GitHub Actions Execution
-↓
+ → 
 Screenshots + Reports
 
 ---
