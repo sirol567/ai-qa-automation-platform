@@ -61,3 +61,24 @@ Pass/fail results surfaced immediately after each pipeline run.
 ---
 
 ## 🔄 Workflow
+Requirements
+↓
+AI Test Case Generation
+↓
+Google Sheets (Storage)
+↓
+Playwright Selector Extraction
+↓
+AI Script Generation
+↓
+Locator Merging
+↓
+GitHub Auto-Commit
+↓
+GitHub Actions Execution
+↓
+Screenshots + Reports
+
+---
+
+*Built end-to-end · Requirements → Scripts → CI/CD → Reports · Zero manual scripting*
