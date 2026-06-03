@@ -158,7 +158,7 @@ This demonstrates centralized execution monitoring and test result visibility.
 
 ## Playwright Execution Result
 
-![Playwright Execution Result](playwright-execution-result.png)
+![Playwright Execution Result](playwright-execution-result%20.png)
 
 This demonstrates automated execution evidence and screenshot capture.
 
