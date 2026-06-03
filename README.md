@@ -1,87 +1,89 @@
 #  AI-Powered QA Automation Platform
 
-> End-to-end AI-driven testing platform that converts requirements into executable Playwright automation tests with zero manual scripting.
+> End-to-end AI-powered testing platform that transforms requirements into executable Playwright automation tests with zero manual scripting.
 
 ---
 
-##  Overview
+#  Overview
 
-The AI-Powered QA Automation Platform automates the complete testing lifecycle, from requirement analysis to automated execution and reporting.
+The AI-Powered QA Automation Platform automates the complete QA lifecycle using AI agents, Playwright, GitHub Actions, and n8n.
 
-The platform leverages AI agents, Playwright, GitHub Actions, and workflow orchestration through n8n to eliminate repetitive QA activities such as test case creation, locator identification, script development, execution, and reporting.
+The platform automatically:
+
+* Generates test cases from requirements
+* Stores test cases in Google Sheets
+* Extracts selectors from live applications using Playwright
+* Generates Playwright automation scripts
+* Merges scripts with extracted locators
+* Commits code to GitHub
+* Executes tests via GitHub Actions
+* Generates screenshots and reports
 
 ---
 
-#  System Architecture
+#  Architecture
 
 ```text
-┌─────────────────┐
-│ User Trigger    │
-│ ("Generate")    │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ AI Agent        │
-│ Requirement     │
-│ Analysis        │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ AI Test Case    │
-│ Generation      │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Google Sheets   │
-│ Test Case Store │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Playwright      │
-│ Selector        │
-│ Extraction      │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ AI Script       │
-│ Generation      │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Locator Merge   │
-│ Engine          │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ GitHub          │
-│ Auto Commit     │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ GitHub Actions  │
-│ CI/CD Pipeline  │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Playwright Test │
-│ Execution       │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Screenshots     │
-│ Reports         │
-│ Results         │
-└─────────────────┘
+┌─────────────────────┐
+│ User Trigger        │
+│ ("Generate")        │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ AI Requirement      │
+│ Analysis            │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ AI Test Case        │
+│ Generation          │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Google Sheets       │
+│ Storage             │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Playwright          │
+│ Selector Extraction │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ AI Script           │
+│ Generation          │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Locator Merge       │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ GitHub Commit       │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ GitHub Actions      │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Playwright Tests    │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│ Reports &           │
+│ Screenshots         │
+└─────────────────────┘
 ```
 
 ---
@@ -94,11 +96,12 @@ The platform leverages AI agents, Playwright, GitHub Actions, and workflow orche
 
 ### Responsibilities
 
-* Accept generation requests
-* Analyze requirements
-* Generate structured test cases
-* Store output in Google Sheets
-* Support Groq, Ollama, and OpenAI models
+* Accepts generation requests
+* Processes requirements
+* Uses Groq/Ollama during development
+* Uses OpenAI in production
+* Generates structured test cases
+* Stores output in Google Sheets
 
 ---
 
@@ -108,71 +111,119 @@ The platform leverages AI agents, Playwright, GitHub Actions, and workflow orche
 
 ### Responsibilities
 
-* Read generated test cases
-* Extract selectors using Playwright
-* Generate Playwright automation scripts
-* Merge scripts with extracted locators
-* Commit scripts to GitHub
-* Trigger GitHub Actions
-* Execute tests automatically
-* Capture screenshots and results
+* Reads generated test cases
+* Extracts selectors using Playwright
+* Generates automation scripts
+* Merges scripts with extracted locators
+* Commits scripts to GitHub
+* Triggers GitHub Actions
+* Executes tests automatically
+* Captures screenshots
 
 ---
 
-#  End-to-End Automated Pipeline
+# 📷 Execution Evidence
 
-| Stage                | Description                                       |
-| -------------------- | ------------------------------------------------- |
-| Trigger              | User initiates generation                         |
-| Requirement Analysis | AI processes requirement data                     |
-| Test Case Generation | Structured test cases created                     |
-| Storage              | Test cases stored in Google Sheets                |
-| Selector Extraction  | Playwright extracts application locators          |
-| Script Generation    | AI generates Playwright scripts                   |
-| Locator Merge        | Generated logic combined with extracted selectors |
-| GitHub Commit        | Scripts committed automatically                   |
-| CI/CD Execution      | GitHub Actions executes tests                     |
-| Reporting            | Screenshots and results generated                 |
+## Generated Playwright Script
+
+![Generated Playwright Script](generated-playwright-script.png)
+
+This demonstrates AI-generated Playwright automation code built dynamically from generated test cases.
 
 ---
 
-# ✨ Key Features
+## GitHub Actions Run
+
+![GitHub Actions Run](github-actions-run.png)
+
+This demonstrates fully automated CI/CD execution triggered on every generated commit.
+
+---
+
+## Playwright Report Generation
+
+![Playwright Report Generation](Playwright Report generation.png)
+
+This demonstrates automated test reporting and execution tracking.
+
+---
+
+## Reports Overview
+
+![Reports Overview](Reports overview.png)
+
+This demonstrates centralized execution monitoring and test result visibility.
+
+---
+
+## Playwright Execution Result
+
+![Playwright Execution Result](playwright-execution-result.png)
+
+This demonstrates automated execution evidence and screenshot capture.
+
+---
+
+#  End-to-End Pipeline
+
+| Stage                | Description                               |
+| -------------------- | ----------------------------------------- |
+| Trigger              | User starts generation                    |
+| Requirement Analysis | AI processes requirements                 |
+| Test Case Generation | Structured test cases generated           |
+| Storage              | Saved to Google Sheets                    |
+| Selector Extraction  | Playwright discovers locators             |
+| Script Generation    | AI generates Playwright code              |
+| Locator Merge        | Scripts combined with extracted selectors |
+| GitHub Commit        | Code pushed automatically                 |
+| CI/CD Execution      | GitHub Actions runs tests                 |
+| Reporting            | Screenshots and reports generated         |
+
+---
+
+#  Key Features
 
 ## AI Test Case Generation
 
-Automatically generates structured test cases from requirements without manual intervention.
+Generates structured test cases from requirements without manual effort.
+
+### Benefits
+
+* Faster QA cycles
+* Consistent test coverage
+* Reduced documentation effort
 
 ---
 
 ## Dynamic Selector Extraction
 
-Uses Playwright to identify and extract selectors directly from the target application.
+Uses Playwright to extract real application locators.
 
-Benefits:
+### Benefits
 
-* Improved reliability
+* Higher script reliability
 * Reduced maintenance
-* Real application locator usage
+* Real-world locator validation
 
 ---
 
 ## AI Script Generation
 
-Converts generated test cases into executable Playwright JavaScript automation scripts.
+Creates executable Playwright JavaScript scripts automatically.
 
-Features:
+### Benefits
 
-* Dynamic script generation
-* Reusable automation logic
-* Minimal manual coding
+* Eliminates manual scripting
+* Speeds up automation development
+* Improves scalability
 
 ---
 
-## Automated GitHub Integration
+## GitHub Integration
 
-Generated scripts are automatically committed into the repository.
+Automatically commits generated scripts.
 
-Benefits:
+### Benefits
 
 * Version control
 * Traceability
@@ -182,35 +233,35 @@ Benefits:
 
 ## CI/CD Execution
 
-GitHub Actions automatically executes generated Playwright tests on every commit.
+Triggers GitHub Actions automatically.
 
-Benefits:
+### Benefits
 
 * Continuous testing
-* Immediate feedback
 * Automated validation
+* Immediate feedback
 
 ---
 
-## Screenshot Evidence Generation
+## Screenshot Generation
 
-Automatically captures execution screenshots.
+Captures screenshots during execution.
 
-Benefits:
+### Benefits
 
-* Audit evidence
-* Failure investigation
-* Test reporting
+* Execution evidence
+* Easier debugging
+* Better reporting
 
 ---
 
 #  Technical Challenges Solved
 
-## Challenge 1: Locator Reliability
+## Challenge 1: Selector Reliability
 
 ### Problem
 
-AI-generated selectors often fail because they don't reflect actual application elements.
+AI-generated selectors often become unstable.
 
 ### Solution
 
@@ -218,15 +269,15 @@ Implemented Playwright-based selector extraction directly from the target applic
 
 ---
 
-## Challenge 2: Generated Script Accuracy
+## Challenge 2: Script Accuracy
 
 ### Problem
 
-Generated scripts may not match available UI elements.
+Generated scripts may not align with actual UI elements.
 
 ### Solution
 
-Built a locator merge engine that combines generated test logic with extracted selectors.
+Created a locator merge engine that combines generated logic with extracted selectors.
 
 ---
 
@@ -238,7 +289,7 @@ Generated tests require automated verification.
 
 ### Solution
 
-Integrated GitHub Actions for automatic execution and validation.
+Integrated GitHub Actions for continuous execution and validation.
 
 ---
 
@@ -258,46 +309,46 @@ Integrated GitHub Actions for automatic execution and validation.
 
 #  Business Impact
 
-The platform significantly reduces manual QA effort by automating:
+This platform automates:
 
+* Requirement analysis
 * Test case creation
-* Locator discovery
+* Locator extraction
 * Script development
 * Test execution
-* Result collection
+* Reporting
 
 Resulting in:
 
+* Reduced manual effort
 * Faster regression cycles
-* Increased automation coverage
-* Reduced maintenance effort
-* Improved testing consistency
+* Improved automation coverage
+* Consistent test quality
+* Scalable automation generation
 
 ---
 
 #  Future Enhancements
 
 * Self-healing locators
-* API test generation
+* API automation generation
 * Visual regression testing
-* Multi-browser execution
-* AI-powered defect analysis
-* Automated bug creation
+* Cross-browser execution
+* AI-based defect categorization
+* Automatic bug creation
 
 ---
 
-##  Author
+#  Author
 
 **Sirol Varshini**
 
 QA Engineer | Automation Engineer
 
-Specializing in:
+### Specializations
 
-* AI-Powered Playwright Automation Testing
+* AI-PoweredPlaywright Automation Testing
+* Test Automation Frameworks
 * Workflow Automation
 * CI/CD Testing
 * Quality Engineering
-
-```
-```
