@@ -150,7 +150,7 @@ This demonstrates automated test reporting and execution tracking.
 
 ## Reports Overview
 
-![Reports Overview](Reports overview.png)
+![Reports Overview](reports-overview.png)
 
 This demonstrates centralized execution monitoring and test result visibility.
 
